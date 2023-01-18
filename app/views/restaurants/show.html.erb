@@ -1,7 +1,25 @@
+<p><strong>Restaurant details:</strong></p>
+<p style="color: green"><%= notice %></p>
+
+<%= render @restaurant %>
+
+<div>
+  <%= link_to "Back to restaurants", restaurants_path %>
+</div>
+
+<br>
+
 <p><strong>Reviews</strong></p>
 <ul class="list-group">
   <% @restaurant.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %>
+    <div><li class="list-group-item"><%= review.content %>
     </li>
+    <li class="list-group-item"><%= review.rating %></li>
+    </div>
   <% end %>
 </ul>
+
+<div>
+  <%= link_to "Add review", new_restaurant_review_path(@restaurant)%>
+</div>
+<br>
